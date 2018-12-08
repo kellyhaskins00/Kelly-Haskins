@@ -2,13 +2,46 @@ body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 18px;
   line-height: 34px;
-  color: #777777;
-  background: url("../images/concrete_seamless.png");
+  color: #777;
+  background-color:#d0b6b5 ;
 }
-
 * {
   box-sizing: border-box;
+  margin: 0;
 }
+
+/* sticky footer styling */
+/* https://css-tricks.com/snippets/css/sticky-footer/ */
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  height: auto !important;
+  height: 100%;
+  min-height: 100%;
+  margin: 0 auto -105px;
+}
+footer,
+.push {
+  height: 105px;
+}
+/* end sticky footer styling */
+/* start hover styling */
+#logo:hover,
+input[type=submit]:hover {
+  color: #d0b6b5;
+}
+nav a:hover {
+  color: #d0b6b5;
+}
+.social:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+/* end hover styling */
+
+
 
 /* general */
 
@@ -35,7 +68,7 @@ h2,
 h3 {
   font-family: Georgia, Times, "Times New Roman", serif;
   font-weight: 700;
-  color: #4aaaa5;
+  color: #52414c;
 }
 
 h1 {
@@ -59,7 +92,7 @@ h3 {
   margin: 0 0 30px;
   overflow: auto;
   color: #ffffff;
-  background: #ffffff;
+  background: #52414c;
   border-bottom: 2px solid #cccccc;
 }
 
@@ -74,7 +107,6 @@ h3 {
   color: #ffffff;
   text-align: center;
   text-decoration: none;
-  background: #4aaaa5;
 }
 
 nav {
@@ -87,7 +119,7 @@ nav a {
   padding-left: 15px;
   margin-left: 15px;
   line-height: 18px;
-  color: #999;
+  color: white;
   text-decoration: none;
   border-left: 1px solid #efefef;
 }
@@ -103,10 +135,10 @@ footer {
   clear: both;
   font-size: 12px;
   color: #ffffff;
-  color: #cccccc;
+  color: darkgray;
   text-align: center;
-  background: #666666;
-  border-top: 8px solid #4aaaa5;
+  background: #d9d9d9;
+  border-top: 8px solid #52414c;
   height: 50px;
 }
 
@@ -117,29 +149,56 @@ h3, h2 {
   border-bottom: 2px solid #eeeeee;
 }
 
-/* main */
 
-#main-container {
-  padding-top: 130px;
-  min-height: calc(100vh - 70px);
+
+/* sidebar */
+.sidebar {
+  float: right;
+  width: 100%;
+  max-width: 270px;
+  padding: 30px;
+  margin-bottom: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+h3,
+.sidebar h2 {
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+  line-height: 22px;
+  border-bottom: 2px solid #eee;
+}
+.social {
+  width: 62px;
+  height: 62px;
+  margin-top: 8px;
+  margin-right: 5px;
+}
+.social:last-child {
+  margin-right: 0;
 }
 
+
+/* main */
+#main-container {
+  padding-top: 130px;
+}
 .main-section {
   float: left;
   width: 100%;
-  max-width: 960px;
+  max-width: 650px;
   padding: 30px;
   margin: 0 0 40px;
-  background: #ffffff;
-  border: 1px solid #dddddd;
+  background: #fff;
+  border: 1px solid #ddd;
 }
-
 /* portfolio page */
 
 .work {
   position: relative;
   float: left;
-  width: 274px;
+  width: 100%;
+  height: auto;
   margin: 20px 0 25px;
   overflow: auto;
 }
@@ -150,6 +209,7 @@ h3, h2 {
 
 .work img {
   width: 100%;
+  height: auto;
   border: 0 none;
   opacity: 0.8;
 }
@@ -164,7 +224,7 @@ h3, h2 {
   line-height: 30px;
   color: #ffffff;
   text-align: center;
-  background: #4aaaa5;
+  background: #52414c;
   border-bottom: 0;
 }
 
@@ -177,15 +237,12 @@ h3, h2 {
 }
 
 /* contact page */
-
 #contact-form ul {
   margin-bottom: 20px;
 }
-
 #contact-form li {
   margin-bottom: 10px;
 }
-
 label,
 input[type=text],
 input[type=email],
@@ -193,7 +250,6 @@ textarea {
   display: block;
   width: 100%;
 }
-
 input[type=text],
 input[type=email],
 textarea {
@@ -202,21 +258,24 @@ textarea {
   font-size: 14px;
   border: 1px solid #dddddd;
 }
-
 textarea {
   height: 200px;
 }
-
 input[type=submit] {
   padding: 10px 30px;
   font-size: 18px;
   color: #ffffff;
   cursor: pointer;
-  background: #4aaaa5;
+  background: #6f2f2c;
   border: 0 none;
 }
-
-
+@media only screen and (max-width: 980px) {
+  nav {
+    float: right;
+    margin-top: 25px;
+    padding-right: 25px;
+}
+}
 @media only screen and (max-width: 980px) {
   nav {
     float: right;
@@ -230,6 +289,9 @@ input[type=submit] {
    #logo {
      position: static;
     }
+    #email {
+      position: static;
+     }
     nav {
       float: right;
       margin-top: 25px;
@@ -241,6 +303,9 @@ input[type=submit] {
    #logo {
      width: 100%;
     }
+    #email {
+      position: static;
+     }
     nav {
       position: relative;
       display: inline-block;
