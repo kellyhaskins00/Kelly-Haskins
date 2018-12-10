@@ -269,6 +269,8 @@ input[type=submit] {
   background: #6f2f2c;
   border: 0 none;
 }
+
+  
 @media only screen and (max-width: 980px) {
   nav {
     float: right;
